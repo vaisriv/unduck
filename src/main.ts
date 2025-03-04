@@ -44,8 +44,24 @@ function noSearchDefaultPageRender() {
   });
 }
 
-const LS_DEFAULT_BANG = localStorage.getItem("default-bang") ?? "g";
-const defaultBang = bangs.find((b) => b.t === LS_DEFAULT_BANG);
+function findBang(url: URL) {
+  //Honoring legacy local-storage defined bangs
+  const LS_DEFAULT_BANG = localStorage.getItem("default-bang");
+  if (LS_DEFAULT_BANG) {
+    const defaultBang = bangs.find((b) => b.t === LS_DEFAULT_BANG);
+    if (defaultBang)
+      return defaultBang;
+  }
+
+  //Obtaining default bang from URL
+  const URL_DEFAULT_BANG = url.searchParams.get("default_bang")?.trim() ?? "g"; //can contain invalid bang
+  const defaultUrlBang = bangs.find((b) => b.t == URL_DEFAULT_BANG);
+  if (defaultUrlBang)
+    return defaultUrlBang;
+
+  //In case everything else is invalid
+  return bangs.find((b) => b.t == "g")!;
+}
 
 function getBangredirectUrl() {
   const url = new URL(window.location.href);
@@ -58,7 +74,7 @@ function getBangredirectUrl() {
   const match = query.match(/!(\S+)/i);
 
   const bangCandidate = match?.[1]?.toLowerCase();
-  const selectedBang = bangs.find((b) => b.t === bangCandidate) ?? defaultBang;
+  const selectedBang = bangs.find((b) => b.t === bangCandidate) ?? findBang(url);
 
   // Remove the first bang from the query
   const cleanQuery = query.replace(/!\S+\s*/i, "").trim();
