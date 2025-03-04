@@ -19,6 +19,22 @@ function noSearchDefaultPageRender() {
             <img src="/clipboard.svg" alt="Copy" />
           </button>
         </div>
+        <form class="bang-form">
+          <label for="bang-input">Care to pick a default bang?</label>
+          <div class="bang-container">
+            <input
+              id="bang-input"
+              type="text"
+              class="bang-input"
+              value="g"
+              list="bang-list"
+              spellcheck="false"
+            />
+            <input type="submit" value="Apply" class"bang-confirm"/>
+          </div>
+          <datalist id="bang-list"></datalist>
+        </form>
+        <p class="bang-error"></p>
       </div>
       <footer class="footer">
         <a href="https://t3.chat" target="_blank">t3.chat</a>
@@ -33,6 +49,27 @@ function noSearchDefaultPageRender() {
   const copyButton = app.querySelector<HTMLButtonElement>(".copy-button")!;
   const copyIcon = copyButton.querySelector("img")!;
   const urlInput = app.querySelector<HTMLInputElement>(".url-input")!;
+  const bangDatalist = app.querySelector<HTMLDataListElement>("#bang-list")!;
+  const bangForm = app.querySelector<HTMLFormElement>(".bang-form")!;
+  const bangInput = app.querySelector<HTMLInputElement>("#bang-input")!;
+  const bangErrorDiv = app.querySelector<HTMLParagraphElement>(".bang-error")!;
+
+  bangs.forEach((b) => {
+    const option = document.createElement("option");
+    option.value = b.t;
+    bangDatalist.appendChild(option);
+  })
+
+  bangForm.addEventListener("submit", (submitEvent: SubmitEvent) => {
+    submitEvent.preventDefault();
+    const bangName = bangInput.value.trim();
+    if (!bangs.find((b) => b.t === bangName)) {
+      bangErrorDiv.innerHTML = `This bang is not known. Check the <a href="https://duckduckgo.com/bang.html" target="_blank">list of available bangs.</a>`;
+      return;
+    }
+    bangErrorDiv.innerHTML = "";
+    urlInput.value = `https://unduck.link?q=%s&default_bang=${encodeURIComponent(bangName)}`;
+  })
 
   copyButton.addEventListener("click", async () => {
     await navigator.clipboard.writeText(urlInput.value);
