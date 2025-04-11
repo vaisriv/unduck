@@ -12,7 +12,7 @@ function noSearchDefaultPageRender() {
           <input 
             type="text" 
             class="url-input"
-            value="https://unduck.link?q=%s"
+            value="https://unduck.astrophel.xyz?q=%s"
             readonly 
           />
           <button class="copy-button">
@@ -68,7 +68,7 @@ function noSearchDefaultPageRender() {
       return;
     }
     bangErrorDiv.innerHTML = "";
-    urlInput.value = `https://unduck.link?q=%s&default_bang=${encodeURIComponent(bangName)}`;
+    urlInput.value = `https://unduck.astrophel.xyz?q=%s&default_bang=${encodeURIComponent(bangName)}`;
   })
 
   copyButton.addEventListener("click", async () => {
