@@ -37,11 +37,21 @@ function noSearchDefaultPageRender() {
         <p class="bang-error"></p>
       </div>
       <footer class="footer">
-        <a href="https://t3.chat" target="_blank">t3.chat</a>
-        •
-        <a href="https://x.com/theo" target="_blank">theo</a>
-        •
-        <a href="https://github.com/t3dotgg/unduck" target="_blank">github</a>
+        <div>
+		<a href="https://t3.chat" target="_blank">t3.chat</a>
+		•
+		<a href="https://x.com/theo" target="_blank">theo</a>
+		•
+		<a href="https://github.com/t3dotgg" target="_blank">gh/t3dotgg</a>
+        </div>
+        <div>
+		<a href="mailto:deer.canidae+ghreadme@gmail.com" target="_blank">deer-canidae</a>
+		•
+		<a href="https://github.com/Deer-Canidae" target="_blank">gh/deer-canidae</a>
+        </div>
+        <div>
+		<a href="https://github.com/vaisriv/unduck" target="_blank">view source</a>
+        </div>
       </footer>
     </div>
   `;
