@@ -78,7 +78,7 @@ function noSearchDefaultPageRender() {
       return;
     }
     bangErrorDiv.innerHTML = "";
-    urlInput.value = `https://unduck.astrophel.xyz?q=%s&default_bang=${encodeURIComponent(bangName)}`;
+    urlInput.value = `https://unduck.astrophel.xyz/?q=%s&default_bang=${encodeURIComponent(bangName)}`;
   })
 
   copyButton.addEventListener("click", async () => {
