@@ -12,7 +12,7 @@ function noSearchDefaultPageRender() {
           <input 
             type="text" 
             class="url-input"
-            value="https://unduck.astrophel.xyz?q=%s"
+            value="https://unduck.astrophel.xyz/?q=%s"
             readonly 
           />
           <button class="copy-button">
