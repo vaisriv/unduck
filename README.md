@@ -13,7 +13,7 @@ This is a fork of [Theo Brown](https://t3.gg/)'s [Unduck](https://github.com/t3d
 ## ℹ️ Motivation
 Theo's version does not have support for customizing the default bang. This feature was [heavily requested](https://github.com/t3dotgg/unduck/issues/35), and implemented by [Deer-Canidae](https://github.com/Deer-Canidae), whose work can be found on their [repo](https://github.com/Deer-Canidae/deer-search) and in this [pull request](https://github.com/t3dotgg/unduck/pull/84).
 
-Unfortunately, after about a month and half, Theo (the sole maintainer, and who is likely busy with his ongoing work on [ping.gg](https://ping.gg]) has yet to merge Deer's PR. Getting impatient, I have decided to host my own instance of Unduck, available at [unduck.astrophel.xyz](https://unduck.astrophel.xyz). I have done my best to attribute credit to both Theo and Deer on the site, but I am open to any suggestions on how to better acknowledge their work.
+Unfortunately, after about a month and half, Theo (the sole maintainer, and who is likely busy with his ongoing work on [ping.gg](https://ping.gg)) has yet to merge Deer's PR. Getting impatient, I have decided to host my own instance of Unduck, available at [unduck.astrophel.xyz](https://unduck.astrophel.xyz). I have done my best to attribute credit to both Theo and Deer on the site, but I am open to any suggestions on how to better acknowledge their work.
 
 ## 📓 Acknowledgements
 As well, I implore you to support the two of them, as they have both contributed far more to this than I have.
