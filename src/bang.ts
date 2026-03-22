@@ -17,7 +17,7 @@ export const bangs = [
     s: "npmx",
     sc: "Programming",
     t: "npmx",
-    u: "https://www.npmx.dev/search?q={{{s}}}",
+    u: "https://npmx.dev/search?q={{{s}}}",
   },
   {
     c: "Tech",
