@@ -78830,6 +78830,15 @@ export const bangs = [
     u: "https://liquipedia.net/overwatch/index.php?search={{{s}}}",
   },
   {
+    c: "Entertainment",
+    d: "liquipedia.net",
+    r: 0,
+    s: "Overwatch Liquipedia",
+    sc: "Games (specific)",
+    t: "owlq",
+    u: "https://liquipedia.net/overwatch/index.php?search={{{s}}}",
+  },
+  {
     c: "Shopping",
     d: "www.owl-you-need.de",
     r: 0,
